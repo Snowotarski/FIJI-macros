@@ -110,9 +110,13 @@ function fileSave(path) {
   			run(type);  
 
   			if (auto==true){
-  				run("Brightness/Contrast...");
-  				run("Enhance Contrast", "saturated=0.35");
-  				run("Apply LUT");
+  				run("Brightness/Contrast...");//problem not here 
+  				resetMinAndMax();
+  				run("Enhance Contrast", "saturated=0.35"); 
+  				getMinAndMax(min,max);  // get display range
+    				if (min != 0 && max != 255) {  // check if the display has been changed
+        				run("Apply LUT", "stack"); 
+        				}
   			}
  
 			saveAs("Tiff", dir2 + t2 + extension + ".tif");
