@@ -1,18 +1,26 @@
-//BitDepth_AutoBC 
-//
-//S.Nowotarski (2018)
-//stn@stowers.org
-
-
-
-//ABOUT
-//
-//Recursively searchs through a complex project file structure to remove tifs and save them to a new 
-//directory. Features easy clickable interface to decide input directory, output directory, conversion to 
-//8-bit,16-bit,32-bit or RGB, optional Auto Brightness and Contrast.
-
-//Processed files are accompanied by a .txt file describing what has been done to the data
-//for documentation and data sharing purposes. 
+/*
+ * BITDEPTH_AUTOBC
+ * 
+ * S. Nowotarski (2018)
+ * stn@stowers.org 
+ * 
+ * ABOUT 
+ * Made to extract tifs from ATLAS project file structure to bypass lengthy export while doing some image manipulation
+ * at the same time. 
+ * 
+ * Recursively searchs through a complex project file structure to remove tifs and save them to a new
+ * directory. Features easy clickable interface to decide input directory, output directory, conversion to 
+ * 8-bit,16-bit,32-bit or RGB, optional Auto Brightness and Contrast.
+ * 
+ * Processed files are accompanied by a .txt file describing what has been done to the data for documentation
+ * and data sharing purposes.
+ */
+ 
+/*WISHLIST
+ * (1) take choice box and say if choice = 8 bit or 16 bit then run enhance contrast option 
+ * (2) Add Dialo.message saying that auto BC enchancement is not applicable to 32-bit saves and will not be run
+ * (3) set it up so that if 32bit or RGB selected that hte log says that nothing was done to adjust the look up table. 
+ */
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //SECTION 1: DIRECTORIES, VARIABLES and TABLES 
