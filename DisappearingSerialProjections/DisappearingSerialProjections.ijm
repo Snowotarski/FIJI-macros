@@ -34,6 +34,7 @@ length = nSlices;
   Dialog.addString("Add this name extension on z projected files:"  extension); 
   Dialog.addChoice ("Projection Type:", newArray("Max Intensity", "Standard Deviation")); 
   Dialog.addNumber ("Divide subject intensity by:", 1); 
+  Dialog.addNumber ("Divide trail intensity by:", 1); 
   Dialog.addSlider("Length of trail visibility:", 1, length, 1);
   Dialog.addMessage (" For projections: Max intensity will yield more solid-ended trails\nwhile Standard Deviation will give a softer end to the trails.");
   Dialog.show(); 
