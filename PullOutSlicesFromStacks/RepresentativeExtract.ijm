@@ -87,29 +87,23 @@ function fileSave(path) {
        if (endsWith(path, ".tif")) {
            open(path);
 
- 			stack= getTitle();//this has to bee in the reiterative  loop
-
-
- 			getDimensions(width, height, channels, slices, frames);
- 			print("The number of slices in this stack is: " + slices); //lets say it's 20 for thinking through
- 
- 			interval= (slices / (choice +1));//for example choice 3 this would be 20/4=5, with 5,10,15 are slices removed 
- 			print ("interval is: " +interval); 
-
-			a=newArray(choice);//create an array with length = choice  (slices duplicated will be instructed from here)
-			Array.fill(a, interval);//fill array with the interval
+ 			stack= getTitle();
+			getDimensions(width, height, channels, slices, frames);
+ 			interval= (slices / (choice +1));
+ 			 
+			a=newArray(choice);
+			Array.fill(a, interval);
 		
 			//populate the array with multiples of the interval, run through it duplicate and save.
 			for (b=0; b<=a.length-1;b++){
-				print("Array length is: "+ a.length + "Iteration (b) is: " +b);
-				a[b]= interval + (interval*b); //fill iterative spot in the array 
+				a[b]= interval + (interval*b); 
 				setSlice(a[b]);
 				run("Duplicate...", "use");
 				t1=getTitle();
 				t2=replace(t1,".tif","");
 				saveAs("Tiff", dir2 + t2 + extension + "_" + floor(a[b])); //floor = decimal to integer
 				close();
-				selectWindow(stack);//select the stack window for start of next round through
+				selectWindow(stack);
 	}
 
      
