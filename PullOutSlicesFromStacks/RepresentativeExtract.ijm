@@ -1,5 +1,5 @@
 /*
- * Triple Extract 
+ * Representative Extract 
  * 
  * S. Nowotarski (2022)
  * stn@stowers.org
